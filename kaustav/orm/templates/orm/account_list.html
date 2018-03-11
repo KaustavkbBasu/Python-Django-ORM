@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weblist</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/orm.css' %}">
+  </head>
+  <body>
+    <!-- <div class="container">
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Submit">
+
+      </form>
+    </div> -->
+    <div class="container">
+      <table class="table">
+        <tr align="center">
+          <td>{{ insert_me }} <br> CHILD ACCOUNT</td>
+          <td>{{ stg }} <br> ACCOUNTS WON</td>
+          <td>{{ poten }} <br> HIGH POTENTIAL ACCOUNTS</td>
+          <td>{{ pipe }} <br> HIGH PIPELINE ACCOUNTS</td>
+        </tr>
+      </table>
+      </div>
+      <div class="container" id="accn">
+        {% for rs in risk %}
+        <p>Account Name : {{ rs.account_name }}</p>
+        <p>End Customer : {{ rs.customer_name }}</p>
+        </div>
+      <div class="container">
+        <table class="table">
+          <tr>
+            <td>Account Risk(s)</td>
+            <td> {{ rs.account_risk }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+  </body>
+</html>
